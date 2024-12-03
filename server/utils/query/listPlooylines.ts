@@ -1,19 +1,19 @@
 import axios from "axios"
 
 type ListCoordinates = {
-    start: {
+    departure: {
         lat: number,
         lng: number
     },
-    end: {
+    destination: {
         lat: number,
         lng: number
     }
 }
-export const listPollyLines = async ({ start, end }: ListCoordinates) => {
+export const listPollyLines = async ({ departure, destination }: ListCoordinates) => {
     const params = {
-        origin: `${start.lat},${start.lng}`,
-        destination: `${end.lat},${end.lng}`,
+        origin: `${departure.lat},${departure.lng}`,
+        destination: `${destination.lat},${destination.lng}`,
         key: process.env.GCLOUD_API_KEY!,
     };
 

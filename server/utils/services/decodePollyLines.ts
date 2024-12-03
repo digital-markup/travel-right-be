@@ -34,18 +34,18 @@ export const releasePoints = (points: Array<{ lat: number; lng: number }>) => {
     const newPoints: Array<{ lat: number; lng: number }> = []
     let distance = 0;
 
-    points.forEach((point, index) => {
-        const start = points[index];
-        const end = points[index + 1];
-        const midpoint = calculateDistance(start, end);
+    for (let i = 0; i < points.length - 1; i++) {
+        const start = points[i];
+        const end = points[i + 1];
+        const segmentDistance = calculateDistance(start, end);
 
-        distance += midpoint;
+        distance += segmentDistance;
 
-        if (distance > 0.55) {
+        if (distance >= 0.55) {
             newPoints.push(end);
             distance = 0;
         }
-    })
+    }
 
     return newPoints;
 }

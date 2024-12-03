@@ -25,7 +25,6 @@ export const getLocationProcess = async ({ start, end }: GeoCode): Promise<any> 
             points: releasePoints(points),
         };
     } catch (error) {
-        console.error("Chat process error:", error);
-        return "An error occurred while processing your request.";
+        return "An error occurred while processing your request." + error;
     }
 };

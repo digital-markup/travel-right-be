@@ -3,9 +3,11 @@ const BASE_TEMPLATE = `Classify the user's question into one of the following ca
 Examples:
 Question: "What are the best places to visit in Sri Lanka?"
 Classification: Places recommendation
+Answer layout: end of the answer provide a list of places in json separately
 
 Question: "I like to enjoy the wildlife, do surfing and hiking. Can you suggest some places to visit?"
 Classification: Tour Packages
+Answer layout: end of the answer provide a list of places in json separately
 
 Question: "How much does it cost to visit ?"
 Classification: Budget Estimation
